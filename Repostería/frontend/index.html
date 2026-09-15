@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Tentacion</title>
+</head>
+<body>
+    <h1>Dulce Tentacion</h1>
+    <h2>Nuestros productos</h2>
+    <div class="producto">
+        <h3>Torta de Chocolate</h3>
+        <p>
+            Deliciosa torta de chocolate con crema.
+        </p>
+        <p>Precio: S/ 45.00</p>
+            <button onclick="agregarAlCarrito('Torta de Chocolate', 45)"> Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <h3>Cupcakes de Vainilla</h3>
+        <p>
+            Caja de 6 cupcakes de vainilla.
+        </p>
+        <p>Precio: S/ 18.00</p>
+            <button onclick="agregarAlCarrito('Cupcakes de Vainilla', 18)"> Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <h3>Brownie</h3>
+        <p>
+            Brownie de chocolate con nueces.
+        </p>
+        <p>Precio: S/ 8.00</p>
+            <button onclick="agregarAlCarrito('Brownie', 8)"> Agregar al carrito</button>
+    </div>
+    <section class="carrito"> 
+        <h2>Mi carrito</h2> 
+        <div id="listaCarrito"> 
+            <p> El carrito esta vacio. </p> 
+        </div> 
+        <h3> 
+            Total: S/ <span id="total">0.00</span> 
+        </h3> 
+        <button onclick="vaciarCarrito()"> 
+            Vaciar carrito 
+        </button> 
+    </section>
+    <script src="js/app.js"></script>
+</body>
+</html>
