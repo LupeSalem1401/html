@@ -1,0 +1,307 @@
+/* Reiniciar CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: rgb(233, 77, 5);
+  color: #070707;
+  padding: 30px;
+  line-height: 1.5;
+}
+
+header {
+  background: #222;
+  color: white;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+nav a,
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover,
+footer a:hover {
+  color: rgb(236, 231, 229);
+}
+
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+section {
+  background: white;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+article {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgb(233, 77, 5);
+  border-radius: 5px;
+}
+
+article + article {
+  margin-top: 8px;
+}
+
+article a {
+  color: #222;
+  font-weight: bold;
+}
+
+aside {
+  background: #fff;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+aside a {
+  color: rgb(233, 77, 5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #222;
+  border-radius: 5px;
+}
+
+button {
+  width: 120px;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(233, 77, 5);
+}
+
+/* Selector de clase */
+.destacado {
+  font-weight: bold;
+  color: blue;
+}
+
+/* Selector de ID */
+#titulo-id {
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Selector de atributo */
+input[type="text"] {
+  border: 4px solid rgb(206, 34, 34);
+}
+
+/* Box Model */
+.caja {
+  margin: 20px;
+  border: 15px solid blue;
+  padding: 30px;
+  background-color: rgb(121, 112, 112);
+  color: white;
+}
+
+/* Display */
+.block {
+  display: block;
+  background: purple;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+}
+
+.inline-demo {
+  display: inline;
+  background: green;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+}
+
+.inline-block-demo {
+  display: inline-block;
+  background: orange;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  width: 110px;
+  height: 60px;
+  text-align: center;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Position */
+.position-static {
+  position: static;
+  background: lightblue;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.position-relative {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  background: lightgreen;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.contenedor-position {
+  position: relative;
+  height: 120px;
+  background: #eee;
+  border: 1px solid #aaa;
+}
+
+.position-absolute {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: orange;
+  padding: 10px;
+}
+
+.position-sticky {
+  position: sticky;
+  top: 0;
+  background: purple;
+  color: white;
+  padding: 10px;
+  margin-top: 15px;
+  z-index: 10;
+}
+
+.espacio-scroll {
+  height: 400px;
+  padding-top: 20px;
+}
+
+/* Border */
+.formas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.shape {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+.shape-square {
+  border-radius: 0;
+}
+
+.shape-circle {
+  border-radius: 50%;
+}
+
+.shape-rounded {
+  border-radius: 1rem;
+}
+
+.shape-asymmetric {
+  border-radius: 50% 10% 50% 10%;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.item {
+  background-color: rgb(10, 77, 77);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+/* Flexbox */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  background: lightblue;
+  padding: 20px;
+  border: 2px solid blue;
+}
+
+footer {
+  margin: 20px auto;
+  padding: 15px;
+  background: #222;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+footer nav {
+  justify-content: center;
+}
+
+footer p {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
