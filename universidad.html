@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Universidad | UNDC</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.css"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="bg-gray-100">
+
+
+<!-- ========================= -->
+<!-- BARRA SUPERIOR -->
+<!-- ========================= -->
+
+<div class="bg-blue-900 text-white text-sm">
+
+    <div class="max-w-7xl mx-auto px-4 py-2
+                flex flex-col md:flex-row
+                justify-between">
+
+        <span>📞 (+51) 993 573 589</span>
+
+        <span>✉ tramite@undc.edu.pe</span>
+
+    </div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- NAVBAR -->
+<!-- ========================= -->
+
+<nav class="bg-white border-gray-200 shadow-md">
+
+    <div class="max-w-7xl mx-auto flex flex-wrap
+                items-center justify-between p-4">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="flex items-center space-x-3">
+
+            <img src="img/logo.png"
+                 class="h-14 w-auto"
+                 alt="Logo UNDC">
+
+            <span class="text-lg font-bold text-blue-900 leading-tight">
+
+                UNIVERSIDAD<br>
+                NACIONAL DE CAÑETE
+
+            </span>
+
+        </a>
+
+
+        <!-- BOTÓN MÓVIL -->
+
+        <button data-collapse-toggle="navbar-menu"
+                type="button"
+                class="inline-flex items-center p-2
+                       w-10 h-10 justify-center
+                       text-gray-500 rounded-lg
+                       md:hidden hover:bg-gray-100">
+
+            ☰
+
+        </button>
+
+
+        <!-- MENÚ -->
+
+        <div class="hidden w-full md:block md:w-auto"
+             id="navbar-menu">
+
+            <ul class="flex flex-col font-medium
+                       p-4 md:p-0 mt-4
+                       border border-gray-100
+                       rounded-lg bg-gray-50
+                       md:flex-row md:space-x-2
+                       md:mt-0 md:border-0
+                       md:bg-white">
+
+
+                <!-- INICIO -->
+
+                <li>
+
+                    <a href="index.html"
+                       class="block py-2 px-3
+                              text-gray-900 rounded
+                              hover:bg-gray-100
+                              md:hover:bg-transparent
+                              md:hover:text-blue-700
+                              md:p-2">
+
+                        Inicio
+
+                    </a>
+
+                </li>
+
+
+                <!-- UNIVERSIDAD -->
+
+                <li>
+
+                    <button data-dropdown-toggle="universidadMenu"
+                            class="flex items-center
+                                   justify-between w-full
+                                   py-2 px-3
+                                   text-blue-700
+                                   rounded md:p-2">
+
+                        Universidad
+
+                        <svg class="w-2.5 h-2.5 ms-2.5"
+                             fill="none"
+                             viewBox="0 0 10 6">
+
+                            <path stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m1 1 4 4 4-4"/>
+
+                        </svg>
+
+                    </button>
+
+
+                    <div id="universidadMenu"
+                         class="z-10 hidden bg-white
+                                divide-y divide-gray-100
+                                rounded-lg shadow w-56">
+
+                        <ul class="py-2 text-sm">
+
+                            <li>
+
+                                <a href="https://web.undc.edu.pe/universidad/"
+                                   target="_blank"
+                                   class="block px-4 py-2
+                                          text-blue-700
+                                          font-semibold
+                                          hover:bg-gray-100">
+
+                                    🌐 Página oficial
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#historia"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+
+                                    Reseña histórica
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#mision"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+
+                                    Misión y visión
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#importancia"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+
+                                    Importancia
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </li>
+
+
+                <!-- FACULTADES -->
+
+                <li>
+
+                    <a href="facultades.html"
+                       class="block py-2 px-3
+                              text-gray-900 rounded
+                              hover:bg-gray-100
+                              md:hover:bg-transparent
+                              md:hover:text-blue-700
+                              md:p-2">
+
+                        Facultades
+
+                    </a>
+
+                </li>
+
+
+                <!-- POSGRADO -->
+
+                <li>
+
+                    <a href="posgrado.html"
+                       class="block py-2 px-3
+                              text-gray-900 rounded
+                              hover:bg-gray-100
+                              md:hover:bg-transparent
+                              md:hover:text-blue-700
+                              md:p-2">
+
+                        Posgrado
+
+                    </a>
+
+                </li>
+
+
+                <!-- SERVICIOS -->
+
+                <li>
+
+                    <button data-dropdown-toggle="serviciosMenu"
+                            class="flex items-center
+                                   justify-between w-full
+                                   py-2 px-3
+                                   text-gray-900 rounded
+                                   hover:bg-gray-100
+                                   md:p-2">
+
+                        Servicios
+
+                        <svg class="w-2.5 h-2.5 ms-2.5"
+                             fill="none"
+                             viewBox="0 0 10 6">
+
+                            <path stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m1 1 4 4 4-4"/>
+
+                        </svg>
+
+                    </button>
+
+
+                    <div id="serviciosMenu"
+                         class="z-10 hidden bg-white
+                                rounded-lg shadow w-52">
+
+                        <ul class="py-2 text-sm">
+
+                            <li>
+                                <a href="#"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+                                    Aula Virtual
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+                                    Biblioteca
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+                                    Repositorio
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </li>
+
+
+                <!-- CONTACTO -->
+
+                <li>
+
+                    <a href="#contacto"
+                       class="block py-2 px-3
+                              text-gray-900 rounded
+                              hover:bg-gray-100
+                              md:p-2">
+
+                        Contacto
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ========================= -->
+<!-- PORTADA -->
+<!-- ========================= -->
+
+<section class="bg-blue-900">
+
+    <div class="max-w-7xl mx-auto
+                px-4 py-24
+                text-center text-white">
+
+        <h1 class="text-4xl md:text-5xl
+                   font-bold mb-5">
+
+            Universidad Nacional de Cañete
+
+        </h1>
+
+        <p class="text-lg md:text-xl
+                  text-blue-100
+                  max-w-3xl mx-auto">
+
+            Conoce nuestra historia,
+            misión, visión e importancia
+            dentro de la educación superior.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- PRESENTACIÓN -->
+<!-- ========================= -->
+
+<section class="max-w-6xl mx-auto
+                px-4 py-16">
+
+    <div class="bg-white rounded-xl
+                shadow-md p-8">
+
+        <h2 class="text-3xl font-bold
+                   text-blue-900 mb-5">
+
+            Sobre la Universidad
+
+        </h2>
+
+        <p class="text-gray-600
+                  leading-relaxed">
+
+            La Universidad Nacional de Cañete
+            es una institución pública de educación
+            superior orientada a la formación
+            profesional, la investigación y la
+            contribución al desarrollo de la sociedad.
+
+            Su propuesta académica comprende
+            diferentes facultades y escuelas
+            profesionales que permiten a los
+            estudiantes desarrollar conocimientos,
+            habilidades y competencias profesionales.
+
+        </p>
+
+        <div class="mt-6">
+
+            <a href="https://web.undc.edu.pe/universidad/"
+               target="_blank"
+               class="inline-block
+                      bg-blue-800
+                      text-white
+                      px-6 py-3
+                      rounded-lg
+                      hover:bg-blue-900">
+
+                Visitar página oficial
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- HISTORIA -->
+<!-- ========================= -->
+
+<section id="historia"
+         class="bg-white">
+
+    <div class="max-w-6xl mx-auto
+                px-4 py-16">
+
+        <h2 class="text-3xl font-bold
+                   text-blue-900 mb-6">
+
+            Reseña Histórica
+
+        </h2>
+
+        <p class="text-gray-600
+                  leading-relaxed">
+
+            La Universidad Nacional de Cañete
+            forma parte del sistema de educación
+            superior pública del país y tiene como
+            finalidad contribuir a la formación
+            profesional de los jóvenes de la
+            provincia de Cañete y otras zonas.
+
+            A través de sus actividades académicas,
+            de investigación y responsabilidad
+            social, busca contribuir al desarrollo
+            de su comunidad.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- MISIÓN Y VISIÓN -->
+<!-- ========================= -->
+
+<section id="mision"
+         class="max-w-7xl mx-auto
+                px-4 py-16">
+
+    <div class="grid grid-cols-1
+                md:grid-cols-2 gap-8">
+
+
+        <!-- MISIÓN -->
+
+        <div class="bg-white
+                    rounded-xl
+                    shadow-md
+                    p-8
+                    border-t-4
+                    border-blue-800">
+
+            <h2 class="text-2xl
+                       font-bold
+                       text-blue-900
+                       mb-4">
+
+                Misión
+
+            </h2>
+
+            <p class="text-gray-600
+                      leading-relaxed">
+
+                Formar profesionales mediante
+                una educación integral que
+                promueva el conocimiento,
+                la investigación, la innovación
+                y el compromiso con la sociedad.
+
+            </p>
+
+        </div>
+
+
+        <!-- VISIÓN -->
+
+        <div class="bg-white
+                    rounded-xl
+                    shadow-md
+                    p-8
+                    border-t-4
+                    border-yellow-400">
+
+            <h2 class="text-2xl
+                       font-bold
+                       text-blue-900
+                       mb-4">
+
+                Visión
+
+            </h2>
+
+            <p class="text-gray-600
+                      leading-relaxed">
+
+                Consolidarse como una institución
+                universitaria que contribuya al
+                desarrollo regional mediante la
+                formación profesional, la investigación
+                y la innovación.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- IMPORTANCIA -->
+<!-- ========================= -->
+
+<section id="importancia"
+         class="bg-blue-900 text-white">
+
+    <div class="max-w-7xl mx-auto
+                px-4 py-16">
+
+        <h2 class="text-3xl font-bold
+                   text-center mb-10">
+
+            Importancia de la Universidad
+
+        </h2>
+
+
+        <div class="grid grid-cols-1
+                    md:grid-cols-3 gap-8">
+
+
+            <div class="text-center">
+
+                <div class="text-4xl mb-3">
+                    🎓
+                </div>
+
+                <h3 class="text-xl
+                           font-bold mb-2">
+
+                    Formación
+
+                </h3>
+
+                <p class="text-blue-100">
+
+                    Preparación de profesionales
+                    para responder a las necesidades
+                    de la sociedad.
+
+                </p>
+
+            </div>
+
+
+            <div class="text-center">
+
+                <div class="text-4xl mb-3">
+                    🔬
+                </div>
+
+                <h3 class="text-xl
+                           font-bold mb-2">
+
+                    Investigación
+
+                </h3>
+
+                <p class="text-blue-100">
+
+                    Generación de conocimientos
+                    mediante actividades de
+                    investigación.
+
+                </p>
+
+            </div>
+
+
+            <div class="text-center">
+
+                <div class="text-4xl mb-3">
+                    🌎
+                </div>
+
+                <h3 class="text-xl
+                           font-bold mb-2">
+
+                    Sociedad
+
+                </h3>
+
+                <p class="text-blue-100">
+
+                    Contribución al desarrollo
+                    de Cañete y de la sociedad.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer id="contacto"
+        class="bg-gray-900 text-white">
+
+    <div class="max-w-7xl mx-auto
+                px-4 py-12">
+
+        <div class="grid grid-cols-1
+                    md:grid-cols-3 gap-8">
+
+
+            <div>
+
+                <h3 class="text-xl
+                           font-bold mb-4">
+
+                    Universidad Nacional de Cañete
+
+                </h3>
+
+                <p class="text-gray-400">
+
+                    Institución pública de educación
+                    superior comprometida con la
+                    formación e investigación.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="text-xl
+                           font-bold mb-4">
+
+                    Enlaces
+
+                </h3>
+
+                <div class="space-y-2">
+
+                    <a href="index.html"
+                       class="block text-gray-400
+                              hover:text-white">
+
+                        Inicio
+
+                    </a>
+
+                    <a href="facultades.html"
+                       class="block text-gray-400
+                              hover:text-white">
+
+                        Facultades
+
+                    </a>
+
+                    <a href="posgrado.html"
+                       class="block text-gray-400
+                              hover:text-white">
+
+                        Posgrado
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="text-xl
+                           font-bold mb-4">
+
+                    Contacto
+
+                </h3>
+
+                <p class="text-gray-400">
+                    📞 (+51) 993 573 589
+                </p>
+
+                <p class="text-gray-400">
+                    ✉ tramite@undc.edu.pe
+                </p>
+
+                <p class="text-gray-400">
+                    📍 San Vicente de Cañete
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr class="my-8 border-gray-700">
+
+
+        <p class="text-center
+                  text-gray-400">
+
+            © 2026 Universidad Nacional de Cañete
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+
+</body>
+</html>
