@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Ejemplo Fetch Fotos</title>
+</head>
+<body>
+<h1>Galería de Fotos</h1>
+<div id="galeria"></div>
+<script>
+const galeria = document.getElementById("galeria");
+// Traemos 5 fotos de prueba
+fetch("https://jsonplaceholder.typicode.com/photos?_limit=5")
+.then(respuesta => respuesta.json())
+.then(fotos => {
+fotos.forEach(foto => {
+const div = document.createElement("div");
+const img = document.createElement("img");
+img.src = foto.thumbnailUrl; // URL de la miniatura
+img.alt = foto.title;
+const p = document.createElement("p");
+p.textContent = foto.title; // título de la foto
+div.appendChild(img);
+div.appendChild(p);
+galeria.appendChild(div);
+});
+})
+.catch(error => {
+console.error("Error al cargar fotos:", error);
+});
+</script>
+</body>
+</html>
