@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f6f8;
+    color: #333;
+}
+
+/* BARRA SUPERIOR */
+
+.top-bar {
+    background-color: #003b70;
+    color: white;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.nombre {
+    color: #005baa;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 1.1;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #005baa !important;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 380px;
+    background:
+        linear-gradient(rgba(0,59,112,.65), rgba(0,91,170,.65)),
+        url("../img/universidad.jpg") center/cover;
+    
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.portada h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.portada p {
+    font-size: 20px;
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding: 60px 0;
+}
+
+.titulo {
+    color: #005baa;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #f5b400;
+    margin: 12px auto;
+}
+
+/* TARJETAS */
+
+.card {
+    border: none;
+    box-shadow: 0 3px 12px rgba(0,0,0,.10);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* FACULTADES */
+
+.facultad {
+    min-height: 250px;
+}
+
+.facultad h4 {
+    color: #005baa;
+    font-weight: bold;
+}
+
+/* PROGRAMAS */
+
+.programa {
+    border-left: 5px solid #005baa;
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+/* POSGRADO */
+
+.posgrado-banner {
+    background:
+        linear-gradient(rgba(0,59,112,.7), rgba(0,91,170,.7)),
+        url("../img/posgrado.jpg") center/cover;
+
+    color: white;
+    padding: 90px 0;
+}
+
+.posgrado-banner h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #003b70;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .portada h1 {
+        font-size: 32px;
+    }
+
+    .posgrado-banner h1 {
+        font-size: 32px;
+    }
+
+}
