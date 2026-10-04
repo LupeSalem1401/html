@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Posgrado | UNDC</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.css"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="bg-gray-100">
+
+
+<!-- ========================= -->
+<!-- BARRA SUPERIOR -->
+<!-- ========================= -->
+
+<div class="bg-blue-900 text-white text-sm">
+
+    <div class="max-w-7xl mx-auto px-4 py-2
+                flex flex-col md:flex-row
+                justify-between">
+
+        <span>📞 (+51) 923 703 585</span>
+
+        <span>✉ escuela.posgrado@undc.edu.pe</span>
+
+    </div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- NAVBAR -->
+<!-- ========================= -->
+
+<nav class="bg-white border-gray-200 shadow-md">
+
+    <div class="max-w-7xl mx-auto
+                flex flex-wrap
+                items-center
+                justify-between p-4">
+
+
+        <a href="index.html"
+           class="flex items-center space-x-3">
+
+            <img src="img/logo.png"
+                 class="h-14 w-auto"
+                 alt="Logo UNDC">
+
+            <span class="text-lg font-bold
+                         text-blue-900
+                         leading-tight">
+
+                UNIVERSIDAD<br>
+                NACIONAL DE CAÑETE
+
+            </span>
+
+        </a>
+
+
+        <button data-collapse-toggle="navbar-menu"
+                type="button"
+                class="inline-flex items-center
+                       p-2 w-10 h-10
+                       justify-center
+                       text-gray-500
+                       rounded-lg md:hidden">
+
+            ☰
+
+        </button>
+
+
+        <div class="hidden w-full md:block md:w-auto"
+             id="navbar-menu">
+
+            <ul class="flex flex-col
+                       font-medium p-4 md:p-0
+                       mt-4 border border-gray-100
+                       rounded-lg bg-gray-50
+                       md:flex-row md:space-x-2
+                       md:mt-0 md:border-0
+                       md:bg-white">
+
+
+                <li>
+
+                    <a href="index.html"
+                       class="block py-2 px-3
+                              text-gray-900
+                              rounded hover:bg-gray-100
+                              md:p-2">
+
+                        Inicio
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="universidad.html"
+                       class="block py-2 px-3
+                              text-gray-900
+                              rounded hover:bg-gray-100
+                              md:p-2">
+
+                        Universidad
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="facultades.html"
+                       class="block py-2 px-3
+                              text-gray-900
+                              rounded hover:bg-gray-100
+                              md:p-2">
+
+                        Facultades
+
+                    </a>
+
+                </li>
+
+
+                <!-- POSGRADO -->
+
+                <li>
+
+                    <button data-dropdown-toggle="posgradoMenu"
+                            class="flex items-center
+                                   py-2 px-3
+                                   text-blue-700
+                                   md:p-2">
+
+                        Posgrado
+
+                        <svg class="w-2.5 h-2.5 ms-2.5"
+                             fill="none"
+                             viewBox="0 0 10 6">
+
+                            <path stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m1 1 4 4 4-4"/>
+
+                        </svg>
+
+                    </button>
+
+
+                    <div id="posgradoMenu"
+                         class="z-10 hidden
+                                bg-white
+                                rounded-lg
+                                shadow w-64">
+
+                        <ul class="py-2 text-sm">
+
+                            <li>
+
+                                <a href="https://posgrado.undc.edu.pe/"
+                                   target="_blank"
+                                   class="block px-4 py-2
+                                          text-blue-700
+                                          font-semibold
+                                          hover:bg-gray-100">
+
+                                    🌐 Página oficial
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#maestrias"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+
+                                    Maestrías
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#doctorado"
+                                   class="block px-4 py-2
+                                          hover:bg-gray-100">
+
+                                    Doctorado
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#contacto"
+                       class="block py-2 px-3
+                              text-gray-900
+                              rounded hover:bg-gray-100
+                              md:p-2">
+
+                        Contacto
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ========================= -->
+<!-- PORTADA -->
+<!-- ========================= -->
+
+<section class="bg-blue-900 text-white">
+
+    <div class="max-w-7xl mx-auto
+                px-4 py-24 text-center">
+
+        <h1 class="text-4xl md:text-5xl
+                   font-bold mb-5">
+
+            Escuela de Posgrado
+
+        </h1>
+
+        <p class="text-blue-100
+                  text-lg max-w-3xl mx-auto">
+
+            Formación avanzada mediante
+            programas de maestría y doctorado,
+            orientados a la investigación y
+            al desarrollo profesional.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- PRESENTACIÓN -->
+<!-- ========================= -->
+
+<section class="max-w-6xl mx-auto
+                px-4 py-16">
+
+    <div class="bg-white
+                rounded-xl
+                shadow-md
+                p-8">
+
+        <h2 class="text-3xl
+                   font-bold
+                   text-blue-900
+                   mb-5">
+
+            Escuela de Posgrado UNDC
+
+        </h2>
+
+        <p class="text-gray-600
+                  leading-relaxed mb-6">
+
+            La Escuela de Posgrado ofrece formación
+            avanzada en maestrías y doctorados,
+            enfocada en la investigación y en el
+            desarrollo de competencias especializadas
+            para profesionales que buscan profundizar
+            sus conocimientos.
+
+        </p>
+
+
+        <a href="https://posgrado.undc.edu.pe/"
+           target="_blank"
+           class="inline-block
+                  bg-blue-800
+                  text-white
+                  px-6 py-3
+                  rounded-lg
+                  hover:bg-blue-900">
+
+            Visitar página oficial
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- MAESTRÍAS -->
+<!-- ========================= -->
+
+<section id="maestrias"
+         class="bg-white">
+
+    <div class="max-w-7xl mx-auto
+                px-4 py-16">
+
+        <div class="text-center mb-12">
+
+            <h2 class="text-3xl
+                       font-bold
+                       text-blue-900">
+
+                Programas de Maestría
+
+            </h2>
+
+            <div class="w-20 h-1
+                        bg-yellow-400
+                        mx-auto mt-3">
+            </div>
+
+        </div>
+
+
+        <div class="grid grid-cols-1
+                    md:grid-cols-2 gap-8">
+
+
+            <!-- GESTIÓN PÚBLICA -->
+
+            <div class="bg-gray-50
+                        rounded-xl
+                        shadow-md
+                        p-8
+                        border-l-4
+                        border-blue-800">
+
+                <div class="text-4xl mb-4">
+                    🏛️
+                </div>
+
+                <h3 class="text-2xl
+                           font-bold
+                           text-blue-900
+                           mb-4">
+
+                    Maestría en Gestión Pública
+
+                </h3>
+
+                <p class="text-gray-600
+                          leading-relaxed">
+
+                    Programa orientado al desarrollo
+                    de conocimientos y competencias
+                    para la gestión de organizaciones
+                    y entidades públicas.
+
+                </p>
+
+            </div>
+
+
+            <!-- DOCENCIA -->
+
+            <div class="bg-gray-50
+                        rounded-xl
+                        shadow-md
+                        p-8
+                        border-l-4
+                        border-blue-800">
+
+                <div class="text-4xl mb-4">
+                    📚
+                </div>
+
+                <h3 class="text-2xl
+                           font-bold
+                           text-blue-900
+                           mb-4">
+
+                    Maestría en Docencia Superior
+                    e Investigación
+
+                </h3>
+
+                <p class="text-gray-600
+                          leading-relaxed">
+
+                    Programa dirigido al desarrollo
+                    de competencias relacionadas con
+                    la docencia universitaria y la
+                    investigación académica.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- DOCTORADO -->
+<!-- ========================= -->
+
+<section id="doctorado"
+         class="max-w-7xl mx-auto
+                px-4 py-16">
+
+    <div class="bg-blue-900
+                rounded-xl
+                p-10
+                text-white
+                text-center">
+
+        <div class="text-5xl mb-5">
+            🎓
+        </div>
+
+        <h2 class="text-3xl
+                   font-bold mb-5">
+
+            Doctorado en Administración
+
+        </h2>
+
+        <p class="text-blue-100
+                  max-w-3xl
+                  mx-auto
+                  leading-relaxed">
+
+            Programa de formación avanzada
+            orientado al desarrollo de capacidades
+            de investigación y generación de
+            conocimiento especializado en el
+            ámbito de la administración.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- BENEFICIOS -->
+<!-- ========================= -->
+
+<section class="bg-white">
+
+    <div class="max-w-7xl mx-auto
+                px-4 py-16">
+
+        <div class="grid grid-cols-1
+                    md:grid-cols-3 gap-8
+                    text-center">
+
+
+            <div>
+
+                <div class="text-4xl mb-4">
+                    🎓
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           text-blue-900 mb-2">
+
+                    Formación avanzada
+
+                </h3>
+
+                <p class="text-gray-600">
+
+                    Profundización de conocimientos
+                    profesionales y académicos.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="text-4xl mb-4">
+                    🔬
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           text-blue-900 mb-2">
+
+                    Investigación
+
+                </h3>
+
+                <p class="text-gray-600">
+
+                    Desarrollo de competencias para
+                    la investigación científica.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="text-4xl mb-4">
+                    💼
+                </div>
+
+                <h3 class="text-xl
+                           font-bold
+                           text-blue-900 mb-2">
+
+                    Desarrollo profesional
+
+                </h3>
+
+                <p class="text-gray-600">
+
+                    Fortalecimiento de competencias
+                    especializadas.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- BOTÓN OFICIAL -->
+<!-- ========================= -->
+
+<section class="bg-blue-900">
+
+    <div class="max-w-6xl mx-auto
+                px-4 py-14
+                text-center">
+
+        <h2 class="text-3xl
+                   font-bold
+                   text-white mb-5">
+
+            Conoce la Escuela de Posgrado
+
+        </h2>
+
+        <a href="https://posgrado.undc.edu.pe/"
+           target="_blank"
+           class="inline-block
+                  bg-yellow-400
+                  text-blue-900
+                  font-bold
+                  px-7 py-3
+                  rounded-lg
+                  hover:bg-yellow-300">
+
+            Visitar página oficial
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer id="contacto"
+        class="bg-gray-900 text-white">
+
+    <div class="max-w-7xl mx-auto
+                px-4 py-12">
+
+        <div class="grid grid-cols-1
+                    md:grid-cols-3 gap-8">
+
+
+            <div>
+
+                <h3 class="text-xl
+                           font-bold mb-4">
+
+                    Escuela de Posgrado UNDC
+
+                </h3>
+
+                <p class="text-gray-400">
+
+                    Formación avanzada en
+                    maestrías y doctorados.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="text-xl
+                           font-bold mb-4">
+
+                    Enlaces
+
+                </h3>
+
+                <div class="space-y-2">
+
+                    <a href="index.html"
+                       class="block text-gray-400
+                              hover:text-white">
+
+                        Inicio
+
+                    </a>
+
+                    <a href="universidad.html"
+                       class="block text-gray-400
+                              hover:text-white">
+
+                        Universidad
+
+                    </a>
+
+                    <a href="facultades.html"
+                       class="block text-gray-400
+                              hover:text-white">
+
+                        Facultades
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="text-xl
+                           font-bold mb-4">
+
+                    Contacto
+
+                </h3>
+
+                <p class="text-gray-400">
+                    📞 (+51) 923 703 585
+                </p>
+
+                <p class="text-gray-400">
+                    ✉ escuela.posgrado@undc.edu.pe
+                </p>
+
+                <p class="text-gray-400">
+                    📍 Av. Mariscal Benavides 1370
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr class="my-8 border-gray-700">
+
+
+        <p class="text-center text-gray-400">
+
+            © 2026 Universidad Nacional de Cañete
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+
+</body>
+</html>

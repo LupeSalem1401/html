@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Universidad Nacional de Cañete</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.css" rel="stylesheet" />
+
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAV ENTRE PROYECTOS / PAGES -->
+    <div style="background:#003b70;color:white;padding:10px;text-align:center;">
+        <strong>🌊 Tailwind</strong> |
+        <a style="color:#ffd700;" href="../index.html">🏠 Volver al inicio (Pages)</a> |
+        <a style="color:#ffd700;" href="https://github.com/LupeSalem1401/html/blob/main/index.html">Main en GitHub</a> |
+        <a style="color:#ffd700;" href="../web-bootstrap/index.html">Bootstrap</a> |
+        <a style="color:#ffd700;" href="../web-permanencia/central.html">JavaScript</a> |
+        <a style="color:#ffd700;" href="../web-java2/index.html">Java2</a>
+    </div>
+
+    <!-- ========================= -->
+    <!-- BARRA SUPERIOR -->
+    <!-- ========================= -->
+
+    <div class="bg-blue-900 text-white text-sm">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between">
+
+            <span>
+                📞 (+51) 993 573 589
+            </span>
+
+            <span>
+                ✉ tramite@undc.edu.pe
+            </span>
+
+        </div>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav class="bg-white border-gray-200 shadow-md">
+
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4">
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="flex items-center space-x-3">
+
+                <img src="img/logo.png"
+                     class="h-14 w-auto"
+                     alt="Logo UNDC">
+
+                <span class="self-center text-lg font-bold text-blue-900 leading-tight">
+                    UNIVERSIDAD<br>
+                    NACIONAL DE CAÑETE
+                </span>
+
+            </a>
+
+
+            <!-- BOTÓN MÓVIL -->
+
+            <button data-collapse-toggle="navbar-menu"
+                    type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100">
+
+                <span class="sr-only">
+                    Abrir menú
+                </span>
+
+                ☰
+
+            </button>
+
+
+            <!-- MENÚ -->
+
+            <div class="hidden w-full md:block md:w-auto" id="navbar-menu">
+
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-2 md:mt-0 md:border-0 md:bg-white">
+
+                    <!-- INICIO -->
+
+                    <li>
+                        <a href="index.html"
+                           class="block py-2 px-3 text-white bg-blue-800 rounded md:bg-transparent md:text-blue-800 md:p-2">
+                            Inicio
+                        </a>
+                    </li>
+
+
+                    <!-- UNIVERSIDAD -->
+
+                    <li>
+
+                        <button id="universidadDropdown"
+                                data-dropdown-toggle="universidadMenu"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-2">
+
+                            Universidad
+
+                            <svg class="w-2.5 h-2.5 ms-2.5"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 10 6">
+
+                                <path stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="m1 1 4 4 4-4"/>
+
+                            </svg>
+
+                        </button>
+
+
+                        <div id="universidadMenu"
+                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-56">
+
+                            <ul class="py-2 text-sm text-gray-700">
+
+                                <li>
+                                    <a href="https://web.undc.edu.pe/universidad/"
+                                       target="_blank"
+                                       class="block px-4 py-2 hover:bg-gray-100 font-semibold text-blue-700">
+
+                                        🌐 Página oficial
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="universidad.html"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Información
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="universidad.html#historia"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Reseña histórica
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="universidad.html#mision"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Misión y visión
+
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- FACULTADES -->
+
+                    <li>
+
+                        <button id="facultadesDropdown"
+                                data-dropdown-toggle="facultadesMenu"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-2">
+
+                            Facultades
+
+                            <svg class="w-2.5 h-2.5 ms-2.5"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 10 6">
+
+                                <path stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="m1 1 4 4 4-4"/>
+
+                            </svg>
+
+                        </button>
+
+
+                        <div id="facultadesMenu"
+                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+
+                            <ul class="py-2 text-sm text-gray-700">
+
+                                <li>
+                                    <a href="https://web.undc.edu.pe/facultades/"
+                                       target="_blank"
+                                       class="block px-4 py-2 hover:bg-gray-100 font-semibold text-blue-700">
+
+                                        🌐 Página oficial
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="facultades.html"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Ver facultades
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="facultades.html#empresariales"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Ciencias Empresariales
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="facultades.html#ingenieria"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Ingeniería
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="facultades.html#agrarias"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Ciencias Agrarias
+
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- POSGRADO -->
+
+                    <li>
+
+                        <button id="posgradoDropdown"
+                                data-dropdown-toggle="posgradoMenu"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-2">
+
+                            Posgrado
+
+                            <svg class="w-2.5 h-2.5 ms-2.5"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 10 6">
+
+                                <path stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="m1 1 4 4 4-4"/>
+
+                            </svg>
+
+                        </button>
+
+
+                        <div id="posgradoMenu"
+                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-56">
+
+                            <ul class="py-2 text-sm text-gray-700">
+
+                                <li>
+                                    <a href="https://posgrado.undc.edu.pe/"
+                                       target="_blank"
+                                       class="block px-4 py-2 hover:bg-gray-100 font-semibold text-blue-700">
+
+                                        🌐 Página oficial
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="posgrado.html"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+
+                                        Información
+
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- SERVICIOS -->
+
+                    <li>
+
+                        <button id="serviciosDropdown"
+                                data-dropdown-toggle="serviciosMenu"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-2">
+
+                            Servicios
+
+                            <svg class="w-2.5 h-2.5 ms-2.5"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 10 6">
+
+                                <path stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="m1 1 4 4 4-4"/>
+
+                            </svg>
+
+                        </button>
+
+
+                        <div id="serviciosMenu"
+                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52">
+
+                            <ul class="py-2 text-sm text-gray-700">
+
+                                <li>
+                                    <a href="#"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+                                        Aula Virtual
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+                                        Biblioteca
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+                                        Turnitin
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#"
+                                       class="block px-4 py-2 hover:bg-gray-100">
+                                        Repositorio
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- CONTACTO -->
+
+                    <li>
+                        <a href="#contacto"
+                           class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-2">
+
+                            Contacto
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ========================= -->
+    <!-- PORTADA -->
+    <!-- ========================= -->
+
+    <section class="relative bg-blue-900">
+
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+
+        <img src="img/univer.jpg"
+             class="absolute inset-0 w-full h-full object-cover"
+             alt="Universidad Nacional de Cañete">
+
+        <div class="relative max-w-7xl mx-auto px-4 py-32 text-center text-white">
+
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Universidad Nacional de Cañete
+            </h1>
+
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+
+                Formación profesional, investigación e innovación
+                al servicio de la sociedad.
+
+            </p>
+
+            <a href="https://web.undc.edu.pe/"
+               target="_blank"
+               class="inline-block bg-yellow-400 text-blue-900 font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition">
+
+                Visitar página oficial
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PRESENTACIÓN -->
+    <!-- ========================= -->
+
+    <section class="max-w-7xl mx-auto px-4 py-16">
+
+        <div class="text-center mb-12">
+
+            <h2 class="text-3xl font-bold text-blue-900">
+                Conoce nuestra Universidad
+            </h2>
+
+            <div class="w-20 h-1 bg-yellow-400 mx-auto mt-3"></div>
+
+            <p class="mt-5 text-gray-600 max-w-3xl mx-auto">
+
+                La Universidad Nacional de Cañete promueve la formación
+                académica, la investigación y el desarrollo profesional
+                de sus estudiantes.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARDS -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+            <!-- UNIVERSIDAD -->
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+
+                <img src="img/uni.jpg"
+                     class="w-full h-52 object-cover"
+                     alt="Universidad">
+
+                <div class="p-6">
+
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3">
+                        Universidad
+                    </h3>
+
+                    <p class="text-gray-600 mb-5">
+
+                        Conoce la historia, misión, visión y principales
+                        aspectos de la Universidad Nacional de Cañete.
+
+                    </p>
+
+                    <a href="https://web.undc.edu.pe/universidad/"
+                       target="_blank"
+                       class="inline-block bg-blue-800 text-white px-5 py-2.5 rounded-lg hover:bg-blue-900">
+
+                        Conocer Universidad
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACULTADES -->
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+
+                <img src="img/campus.png"
+                     class="w-full h-52 object-cover"
+                     alt="Facultades">
+
+                <div class="p-6">
+
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3">
+                        Facultades
+                    </h3>
+
+                    <p class="text-gray-600 mb-5">
+
+                        Conoce las facultades y escuelas profesionales
+                        que forman parte de nuestra universidad.
+
+                    </p>
+
+                    <a href="https://web.undc.edu.pe/facultades/"
+                       target="_blank"
+                       class="inline-block bg-blue-800 text-white px-5 py-2.5 rounded-lg hover:bg-blue-900">
+
+                        Ver Facultades
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- POSGRADO -->
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+
+                <img src="img/posgra.jpg"
+                     class="w-full h-52 object-cover"
+                     alt="Posgrado">
+
+                <div class="p-6">
+
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3">
+                        Posgrado
+                    </h3>
+
+                    <p class="text-gray-600 mb-5">
+
+                        Conoce los programas de maestría y doctorado
+                        disponibles en la Escuela de Posgrado.
+
+                    </p>
+
+                    <a href="https://posgrado.undc.edu.pe/"
+                       target="_blank"
+                       class="inline-block bg-blue-800 text-white px-5 py-2.5 rounded-lg hover:bg-blue-900">
+
+                        Ver Posgrado
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- INFORMACIÓN -->
+    <!-- ========================= -->
+
+    <section class="bg-blue-900 text-white">
+
+        <div class="max-w-7xl mx-auto px-4 py-16">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+                <div>
+
+                    <div class="text-4xl mb-3">
+                        🎓
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2">
+                        Formación profesional
+                    </h3>
+
+                    <p class="text-blue-100">
+                        Preparación académica para el desarrollo
+                        profesional de nuestros estudiantes.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <div class="text-4xl mb-3">
+                        🔬
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2">
+                        Investigación
+                    </h3>
+
+                    <p class="text-blue-100">
+                        Promoción de la investigación y generación
+                        de conocimiento.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <div class="text-4xl mb-3">
+                        💡
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2">
+                        Innovación
+                    </h3>
+
+                    <p class="text-blue-100">
+                        Impulso de soluciones innovadoras para
+                        contribuir al desarrollo de la sociedad.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer id="contacto"
+            class="bg-gray-900 text-white">
+
+        <div class="max-w-7xl mx-auto px-4 py-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div>
+
+                    <h3 class="text-xl font-bold mb-4">
+                        Universidad Nacional de Cañete
+                    </h3>
+
+                    <p class="text-gray-400">
+
+                        Institución pública de educación superior
+                        comprometida con la formación, investigación
+                        e innovación.
+
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="text-xl font-bold mb-4">
+                        Enlaces
+                    </h3>
+
+                    <ul class="space-y-2 text-gray-400">
+
+                        <li>
+                            <a href="https://web.undc.edu.pe/universidad/"
+                               target="_blank"
+                               class="hover:text-white">
+                                Universidad
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://web.undc.edu.pe/facultades/"
+                               target="_blank"
+                               class="hover:text-white">
+                                Facultades
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://posgrado.undc.edu.pe/"
+                               target="_blank"
+                               class="hover:text-white">
+                                Posgrado
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="text-xl font-bold mb-4">
+                        Contáctanos
+                    </h3>
+
+                    <p class="text-gray-400 mb-2">
+                        📞 (+51) 993 573 589
+                    </p>
+
+                    <p class="text-gray-400 mb-2">
+                        ✉ tramite@undc.edu.pe
+                    </p>
+
+                    <p class="text-gray-400">
+                        📍 San Vicente de Cañete
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <hr class="my-8 border-gray-700">
+
+
+            <div class="text-center text-gray-400">
+
+                © 2026 Universidad Nacional de Cañete
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- FLOWBITE JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+
+</body>
+
+</html>
