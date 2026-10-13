@@ -1,335 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 - Evaluación EmailJS (rama email)</title>
-    <!-- EmailJS SDK oficial: https://www.emailjs.com/docs/sdk/send/ -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <style>
-        /* ===== Módulo Evaluación EmailJS (rama email) ===== */
-        :root {
-            --email-primary: #003b70;
-            --email-accent: #ffd700;
-            --email-success: #16a34a;
-            --email-error: #dc2626;
-            --email-bg: #f1f5f9;
-        }
-        .email-section {
-            max-width: 680px;
-            margin: 24px auto;
-            background: var(--email-bg);
-            border: 2px solid var(--email-primary);
-            border-radius: 14px;
-            padding: 24px;
-            font-family: Arial, Helvetica, sans-serif;
-            box-shadow: 0 6px 24px rgba(0,59,112,.15);
-        }
-        .email-section h2 { color: var(--email-primary); margin: 0 0 6px; }
-        .email-section p.desc { color: #334155; margin: 0 0 16px; }
-        .email-grid { display: grid; gap: 12px; }
-        .email-field label { font-weight: bold; display: block; margin-bottom: 4px; color: #0f172a; }
-        .email-field input, .email-field textarea {
-            width: 100%; padding: 10px 12px; border: 2px solid #cbd5e1;
-            border-radius: 8px; font-size: 15px; box-sizing: border-box;
-        }
-        .email-field input:focus, .email-field textarea:focus {
-            outline: none; border-color: var(--email-primary);
-            box-shadow: 0 0 0 3px rgba(0,59,112,.15);
-        }
-        .email-field.invalid input, .email-field.invalid textarea { border-color: var(--email-error); }
-        .email-error-msg { color: var(--email-error); font-size: 13px; min-height: 18px; display: block; }
-        .email-actions { display: flex; gap: 10px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
-        #btn-enviar-email {
-            background: var(--email-primary); color: #fff; border: 0; border-radius: 8px;
-            padding: 12px 22px; font-size: 16px; font-weight: bold; cursor: pointer;
-        }
-        #btn-enviar-email:hover:not(:disabled) { background: #00509e; }
-        #btn-enviar-email:disabled { opacity: .6; cursor: not-allowed; }
-        #btn-limpiar { background: #e2e8f0; border: 0; border-radius: 8px; padding: 12px 18px; cursor: pointer; }
-        #email-status {
-            display: none; margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-weight: bold;
-        }
-        #email-status.show { display: block; }
-        #email-status.success { background: #dcfce7; color: #166534; border: 1px solid var(--email-success); }
-        #email-status.error { background: #fee2e2; color: #991b1b; border: 1px solid var(--email-error); }
-        #email-status.info { background: #fef9c3; color: #854d0e; border: 1px solid #ca8a04; }
-        .email-help { margin-top: 14px; font-size: 14px; color: #334155; background: #fff; border-radius: 8px; padding: 12px; }
-        .email-help code { background: #0f172a; color: #ffd700; padding: 1px 6px; border-radius: 4px; }
-        .spinner {
-            display: inline-block; width: 16px; height: 16px; border: 3px solid #fff;
-            border-top-color: var(--email-accent); border-radius: 50%;
-            animation: spin 0.8s linear infinite; vertical-align: middle; margin-right: 8px;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .badge-rama {
-            display: inline-block; background: var(--email-primary); color: var(--email-accent);
-            padding: 3px 10px; border-radius: 20px; font-size: 13px; margin-bottom: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto EmailJS | Evaluación Full Stack — Rama email</title>
+  <meta name="description" content="Página de contacto funcional con HTML5, CSS3, JavaScript y EmailJS. Envía mensajes a tu correo personal o institucional con validación y confirmación." />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <nav style="background:#003b70;color:white;padding:12px;">
-        <strong>🏠 Proyecto HTML - Main</strong> |
-        <a style="color:#ffd700;" href="index.html">Main</a> |
-        <a style="color:#ffd700;" href="web-bootstrap/index.html">Bootstrap</a> |
-        <a style="color:#ffd700;" href="web-tailwind/index.html">Tailwind</a> |
-        <a style="color:#ffd700;" href="web-permanencia/central.html">JavaScript</a> |
-        <a style="color:#ffd700;" href="web-java2/index.html">Java Fetch</a> |
-        <a style="color:#fff;background:#16a34a;padding:4px 10px;border-radius:6px;text-decoration:none;" href="#contacto-email">✉️ EmailJS</a>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">✉️ Proyecto HTML <span class="badge">rama: email</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="contacto.html">Contacto EmailJS</a>
+        <a href="https://www.emailjs.com/docs/" target="_blank" rel="noopener">Docs EmailJS</a>
+        <a href="https://github.com/LupeSalem1401/html/tree/email" target="_blank" rel="noopener">Ver rama email</a>
+      </div>
     </nav>
-    <h1>Mendfoeza</h1>
-    <h2>Atuncar</h2>
-    <h3>Juan</h3>
-    <h4>Esteban</h4>
-    <h5>Tasayco</h5>
-    <h6>Tello</h6>
-    <p>This is a paragraph.</p>
-<b>Bold</b>
-<br>
-<strong>Important</strong>
-<br>
-<i>Italic</i>
-<br>
-<em>Emphasis</em>
-<br>
-<u>Underline</u>
-<br>
-<small>Small Text</small>
-<br>
-<hr>
-        <li><a href="html5.html">HTML5</a></li>
-        <li><a href="css3.html">CSS3</a></li>
-        <li><a href="portafolio.html">PORTAFOLIO</a></li>
-        <li><a href="IA.html">Pagina Web IA</a></li>
-        <li><a href="git.html">Git</a></li>
-<hr>
-<h2>Mis Proyectos - Webs (GitHub Pages)</h2>
-<p>Desde aquí puedes acceder a cada proyecto. Y desde cada proyecto puedes volver aquí al index principal.</p>
-<ul>
-        <li><a href="web-bootstrap/index.html">🎨 Bootstrap - Universidad con Bootstrap</a> (<a href="https://github.com/LupeSalem1401/html/blob/bootstrap/index.html">ver rama bootstrap en GitHub</a>)</li>
-        <li><a href="web-tailwind/index.html">🌊 Tailwind - Universidad con Tailwind</a> (<a href="https://github.com/LupeSalem1401/html/blob/tailwind/index.html">ver rama tailwind en GitHub</a>)</li>
-        <li><a href="web-permanencia/central.html">📜 JavaScript - central.html</a> (<a href="https://github.com/LupeSalem1401/html/blob/permanencia01/central.html">ver rama permanencia01 en GitHub</a>)</li>
-        <li><a href="web-java2/index.html">☕ JavaScript 2 / Fetch - Galería</a> (<a href="https://github.com/LupeSalem1401/html/blob/java2/index.html">ver rama java2 en GitHub</a>)</li>
-</ul>
-<hr>
+  </header>
 
-<!-- ============================================================
-     EVALUACIÓN PARCIAL: Envío de correos con EmailJS (rama: email)
-     Requerimientos cubiertos:
-     1. Rama "email" separada de main.
-     2. Interfaz HTML5 + CSS3 + JS.
-     3. Integración EmailJS (servicio + plantilla + public key).
-     4. Envío al correo personal/institucional del estudiante.
-     5. Validación + notificación éxito/error.
-     6. Cambios publicados en rama email.
-     ============================================================ -->
-<section id="contacto-email" class="email-section" aria-labelledby="email-title">
-    <span class="badge-rama">Rama: email • Evaluación Parcial Full Stack</span>
-    <h2 id="email-title">✉️ Enviar mensaje de confirmación con EmailJS</h2>
-    <p class="desc">Completa los datos y presiona <strong>Enviar mensaje</strong>. Recibirás la notificación en tu correo personal o institucional. Se muestra aviso de éxito o error.</p>
+  <main class="container">
+    <section class="hero">
+      <p class="kicker">Diseño Full Stack • HTML5 + CSS3 + JavaScript • Sin backend</p>
+      <h1>Envío de correos con <span class="accent">EmailJS</span></h1>
+      <p class="lead">
+        Evaluación parcial: interfaz web funcional que envía un mensaje a tu correo
+        personal o institucional usando los parámetros de tu plantilla de EmailJS,
+        con validación y mensajes de confirmación o error.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="contacto.html">Ir a la nueva página de contacto →</a>
+        <a class="btn btn-ghost" href="https://www.emailjs.com/" target="_blank" rel="noopener">Crear cuenta EmailJS</a>
+      </div>
+      <ul class="checklist">
+        <li>✔ Servicio + Plantilla + Public Key configurables en <code>js/config.js</code></li>
+        <li>✔ Parámetros de plantilla: <code>{{from_name}} {{from_email}} {{to_email}} {{subject}} {{message}} {{time}}</code></li>
+        <li>✔ Validación en vivo + aviso de éxito / error / falta de configuración</li>
+      </ul>
+    </section>
 
-    <form id="email-form" novalidate>
-        <div class="email-grid">
-            <div class="email-field" id="g-nombre">
-                <label for="nombre">Nombre completo *</label>
-                <input type="text" id="nombre" name="from_name" placeholder="Ej: Juan Esteban Tasayco" maxlength="80" autocomplete="name" required>
-                <span class="email-error-msg" id="err-nombre"></span>
-            </div>
-            <div class="email-field" id="g-origen">
-                <label for="origen">Tu correo (remitente) *</label>
-                <input type="email" id="origen" name="from_email" placeholder="Ej: juan@ejemplo.com" maxlength="100" autocomplete="email" required>
-                <span class="email-error-msg" id="err-origen"></span>
-            </div>
-            <div class="email-field" id="g-destino">
-                <label for="destino">Correo destino (personal / institucional) *</label>
-                <input type="email" id="destino" name="to_email" placeholder="Ej: juan@universidad.edu.pe" maxlength="100" autocomplete="email" required>
-                <span class="email-error-msg" id="err-destino"></span>
-            </div>
-            <div class="email-field" id="g-asunto">
-                <label for="asunto">Asunto *</label>
-                <input type="text" id="asunto" name="subject" placeholder="Ej: Confirmación de evaluación parcial" maxlength="120" required>
-                <span class="email-error-msg" id="err-asunto"></span>
-            </div>
-            <div class="email-field" id="g-mensaje">
-                <label for="mensaje">Mensaje * (mín. 10 caracteres)</label>
-                <textarea id="mensaje" name="message" rows="5" placeholder="Escribe tu mensaje de confirmación o notificación..." maxlength="2000" required></textarea>
-                <span class="email-error-msg" id="err-mensaje"></span>
-            </div>
-        </div>
-        <div class="email-actions">
-            <button type="submit" id="btn-enviar-email">Enviar mensaje</button>
-            <button type="button" id="btn-limpiar">Limpiar</button>
-        </div>
-        <div id="email-status" role="alert" aria-live="polite"></div>
-    </form>
+    <section class="grid-3">
+      <article class="card">
+        <h2>1. Servicio de correo</h2>
+        <p>Conecta Gmail, Outlook o cualquier SMTP desde <strong>Email Services → Add New Service</strong> y copia tu <strong>Service ID</strong>.</p>
+        <a href="https://www.emailjs.com/docs/tutorial/adding-email-service/" target="_blank" rel="noopener">Ver tutorial oficial →</a>
+      </article>
+      <article class="card">
+        <h2>2. Plantilla</h2>
+        <p>Crea tu plantilla con las variables del formulario. En <strong>To Email</strong> usa <code>{{to_email}}</code> para enviar al destino que escriba el usuario.</p>
+        <a href="https://www.emailjs.com/docs/tutorial/creating-email-template/" target="_blank" rel="noopener">Ver tutorial oficial →</a>
+      </article>
+      <article class="card">
+        <h2>3. Formulario</h2>
+        <p>La página <strong>contacto.html</strong> sigue al pie de la letra <strong>Creating a contact form</strong>: SDK por CDN, <code>emailjs.init</code> y <code>emailjs.send</code>.</p>
+        <a href="https://www.emailjs.com/docs/tutorial/creating-contact-form/" target="_blank" rel="noopener">Ver tutorial oficial →</a>
+      </article>
+    </section>
 
-    <details class="email-help">
-        <summary><strong>⚙️ ¿Cómo configurar EmailJS? (clic para ver)</strong></summary>
-        <ol>
-            <li>Crea cuenta en <a href="https://www.emailjs.com/" target="_blank" rel="noopener">emailjs.com</a>.</li>
-            <li><strong>Email Services → Add New Service</strong> (ej. Gmail) → copia tu <code>SERVICE ID</code>.</li>
-            <li><strong>Email Templates → Create New Template</strong> → usa estas variables:<br>
-                <code>{{from_name}}</code> <code>{{from_email}}</code> <code>{{to_email}}</code> <code>{{subject}}</code> <code>{{message}}</code><br>
-                En <strong>To Email</strong> de la plantilla pon <code>{{to_email}}</code> para enviar al correo destino del formulario. → copia tu <code>TEMPLATE ID</code>.</li>
-            <li><strong>Account → General → Public Key</strong> → copia tu <code>PUBLIC KEY</code>.</li>
-            <li>Edita abajo en el <code>&lt;script&gt;</code> el objeto <code>EMAILJS_CONFIG</code> con tus 3 valores y recarga.</li>
-        </ol>
-    </details>
-</section>
+    <section class="card howto">
+      <h2>¿Cómo probar en 2 minutos?</h2>
+      <ol>
+        <li>Abre <a href="contacto.html"><strong>contacto.html</strong></a>.</li>
+        <li>Edita <code>js/config.js</code> con tu <code>PUBLIC_KEY</code>, <code>SERVICE_ID</code> y <code>TEMPLATE_ID</code> (ver <code>README.md</code>).</li>
+        <li>Completa el formulario y presiona <strong>Enviar mensaje</strong>. Verás <em>Enviando…</em>, luego <em>✅ éxito</em> o <em>❌ error</em>.</li>
+      </ol>
+    </section>
+  </main>
 
-<hr>
-<br>
-<img src="image.jpg" alt="Image" width="200">
-<ul>
-  <li>Apple</li>
-  <li>Mango</li>
-  <li>Orange</li>
-</ul>
-<ol>
-  <li>Wake Up</li>
-  <li>Study</li>
-  <li>Sleep</li>
-</ol>
-<div class="box">
-    <h2>Título</h2>
-    <p>Texto</p>
-    </p>
-</div>
-<p>Hola, mi nombre es <span class="resaltado">Juan</span> y aprendo HTML.</p>
-
-<script>
-/* ==========================================================
-   CONFIGURACIÓN EMAILJS — EDITA ESTOS 3 VALORES
-   Guía: https://www.emailjs.com/docs/
-   ========================================================== */
-const EMAILJS_CONFIG = {
-    PUBLIC_KEY: "TU_PUBLIC_KEY",     // Ej: "xYzAbC123..."
-    SERVICE_ID: "TU_SERVICE_ID",     // Ej: "service_abc123"
-    TEMPLATE_ID: "TU_TEMPLATE_ID"    // Ej: "template_xyz456"
-};
-
-(function initEmailJS() {
-    try {
-        if (window.emailjs && EMAILJS_CONFIG.PUBLIC_KEY !== "TU_PUBLIC_KEY") {
-            emailjs.init({ publicKey: EMAILJS_CONFIG.PUBLIC_KEY });
-        }
-    } catch (e) {
-        console.warn("No se pudo inicializar EmailJS:", e);
-    }
-})();
-
-const form = document.getElementById("email-form");
-const btnEnviar = document.getElementById("btn-enviar-email");
-const btnLimpiar = document.getElementById("btn-limpiar");
-const statusBox = document.getElementById("email-status");
-
-function showStatus(type, message) {
-    statusBox.className = "show " + type; // success | error | info
-    statusBox.textContent = message;
-}
-
-function setFieldError(inputId, errId, groupId, message) {
-    document.getElementById(errId).textContent = message || "";
-    document.getElementById(groupId).classList.toggle("invalid", !!message);
-}
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-function validarFormulario() {
-    const nombre = document.getElementById("nombre").value.trim();
-    const origen = document.getElementById("origen").value.trim();
-    const destino = document.getElementById("destino").value.trim();
-    const asunto = document.getElementById("asunto").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
-    let ok = true;
-
-    if (nombre.length < 3) { setFieldError(0, "err-nombre", "g-nombre", "El nombre debe tener al menos 3 caracteres."); ok = false; }
-    else setFieldError(0, "err-nombre", "g-nombre", "");
-
-    if (!emailRegex.test(origen)) { setFieldError(0, "err-origen", "g-origen", "Ingresa un correo remitente válido."); ok = false; }
-    else setFieldError(0, "err-origen", "g-origen", "");
-
-    if (!emailRegex.test(destino)) { setFieldError(0, "err-destino", "g-destino", "Ingresa el correo destino válido (personal o institucional)."); ok = false; }
-    else setFieldError(0, "err-destino", "g-destino", "");
-
-    if (asunto.length < 3) { setFieldError(0, "err-asunto", "g-asunto", "El asunto es obligatorio (mín. 3 caracteres)."); ok = false; }
-    else setFieldError(0, "err-asunto", "g-asunto", "");
-
-    if (mensaje.length < 10) { setFieldError(0, "err-mensaje", "g-mensaje", "El mensaje debe tener al menos 10 caracteres."); ok = false; }
-    else setFieldError(0, "err-mensaje", "g-mensaje", "");
-
-    return ok ? { nombre, origen, destino, asunto, mensaje } : null;
-}
-
-// Limpia error al escribir (validación en tiempo real)
-["nombre", "origen", "destino", "asunto", "mensaje"].forEach(function (id) {
-    document.getElementById(id).addEventListener("input", function () {
-        const map = { nombre: ["err-nombre", "g-nombre"], origen: ["err-origen", "g-origen"], destino: ["err-destino", "g-destino"], asunto: ["err-asunto", "g-asunto"], mensaje: ["err-mensaje", "g-mensaje"] };
-        setFieldError(0, map[id][0], map[id][1], "");
-        statusBox.className = "";
-    });
-});
-
-btnLimpiar.addEventListener("click", function () {
-    form.reset();
-    ["err-nombre", "err-origen", "err-destino", "err-asunto", "err-mensaje"].forEach(function (id) { document.getElementById(id).textContent = ""; });
-    document.querySelectorAll(".email-field").forEach(function (el) { el.classList.remove("invalid"); });
-    statusBox.className = "";
-    statusBox.textContent = "";
-});
-
-form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const datos = validarFormulario();
-    if (!datos) {
-        showStatus("error", "❌ Revisa los campos marcados en rojo e intenta de nuevo.");
-        return;
-    }
-
-    // Verificar configuración antes de llamar a la API
-    if (EMAILJS_CONFIG.PUBLIC_KEY === "TU_PUBLIC_KEY" ||
-        EMAILJS_CONFIG.SERVICE_ID === "TU_SERVICE_ID" ||
-        EMAILJS_CONFIG.TEMPLATE_ID === "TU_TEMPLATE_ID") {
-        showStatus("info", "⚠️ Falta configurar EmailJS: edita EMAILJS_CONFIG (PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID) en el index.html. Ver ayuda ⚙️ abajo.");
-        return;
-    }
-    if (!window.emailjs) {
-        showStatus("error", "❌ No se pudo cargar la librería de EmailJS (revisa tu conexión a internet).");
-        return;
-    }
-
-    // Estado de carga
-    btnEnviar.disabled = true;
-    const originalText = btnEnviar.textContent;
-    btnEnviar.innerHTML = '<span class="spinner"></span>Enviando...';
-    showStatus("info", "⏳ Enviando mensaje, por favor espera...");
-
-    // Parámetros = variables {{...}} de tu plantilla EmailJS
-    const templateParams = {
-        from_name: datos.nombre,
-        from_email: datos.origen,
-        to_email: datos.destino,
-        subject: datos.asunto,
-        message: datos.mensaje
-    };
-
-    try {
-        emailjs.init({ publicKey: EMAILJS_CONFIG.PUBLIC_KEY });
-        const resp = await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams);
-        console.log("EmailJS OK:", resp);
-        showStatus("success", "✅ ¡Mensaje enviado correctamente a " + datos.destino + "! Revisa tu bandeja (y spam).");
-        form.reset();
-    } catch (err) {
-        console.error("EmailJS error:", err);
-        const detalle = (err && err.text) ? " Detalle: " + err.text : "";
-        showStatus("error", "❌ Ocurrió un error al enviar el mensaje. Intenta de nuevo." + detalle);
-    } finally {
-        btnEnviar.disabled = false;
-        btnEnviar.textContent = originalText;
-    }
-});
-</script>
-
+  <footer class="site-footer">
+    <p>Rama <strong>email</strong> del repo <a href="https://github.com/LupeSalem1401/html" target="_blank" rel="noopener">LupeSalem1401/html</a> • HTML5 + CSS3 + JS + EmailJS • <span id="year"></span></p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

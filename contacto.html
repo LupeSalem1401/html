@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Enviar mensaje con EmailJS</title>
+  <meta name="description" content="Nueva página de contacto funcional con EmailJS: validación, envío a correo personal/institucional y mensajes de confirmación o error." />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- ============================================================
+       EmailJS SDK oficial (browser) — como indica la documentación:
+       https://www.emailjs.com/docs/sdk/installation/
+       https://www.emailjs.com/docs/tutorial/creating-contact-form/
+       ============================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">✉️ Proyecto HTML <span class="badge">rama: email</span></a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="contacto.html" class="active">Contacto EmailJS</a>
+        <a href="https://github.com/LupeSalem1401/html/tree/email" target="_blank" rel="noopener">Ver rama email</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card form-card" aria-labelledby="titulo-contacto">
+      <span class="badge">Nueva página • Evaluación Parcial Full Stack</span>
+      <h1 id="titulo-contacto">Enviar mensaje con EmailJS</h1>
+      <p class="muted">
+        Completa los datos y presiona <strong>Enviar mensaje</strong>.
+        El mensaje llegará a tu correo personal o institucional según la plantilla configurada.
+      </p>
+
+      <!-- ==========================================================
+           FORMULARIO — names = variables {{...}} de la plantilla EmailJS
+           from_name / from_email / to_email / subject / message / time
+           ========================================================== -->
+      <form id="contact-form" novalidate>
+        <!-- Valor dinámico: el JS pone la fecha/hora actual (como en el tutorial oficial) -->
+        <input type="hidden" name="time" id="time" value="" />
+
+        <div class="field" id="g-nombre">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="from_name" placeholder="Ej: Juan Esteban Tasayco" maxlength="80" autocomplete="name" required />
+          <small class="error-msg" id="err-nombre"></small>
+        </div>
+
+        <div class="form-row">
+          <div class="field" id="g-origen">
+            <label for="origen">Tu correo (remitente) *</label>
+            <input type="email" id="origen" name="from_email" placeholder="Ej: juan@ejemplo.com" maxlength="100" autocomplete="email" required />
+            <small class="error-msg" id="err-origen"></small>
+          </div>
+          <div class="field" id="g-destino">
+            <label for="destino">Correo destino (personal / institucional) *</label>
+            <input type="email" id="destino" name="to_email" placeholder="Ej: juan@universidad.edu.pe" maxlength="100" autocomplete="email" required />
+            <small class="error-msg" id="err-destino"></small>
+          </div>
+        </div>
+
+        <div class="field" id="g-asunto">
+          <label for="asunto">Asunto *</label>
+          <input type="text" id="asunto" name="subject" placeholder="Ej: Confirmación de evaluación parcial" maxlength="120" required />
+          <small class="error-msg" id="err-asunto"></small>
+        </div>
+
+        <div class="field" id="g-mensaje">
+          <label for="mensaje">Mensaje * <span class="hint">(mín. 10 caracteres)</span></label>
+          <textarea id="mensaje" name="message" rows="5" maxlength="2000" placeholder="Escribe tu mensaje de confirmación o notificación..." required></textarea>
+          <small class="error-msg" id="err-mensaje"></small>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="btn-enviar">Enviar mensaje</button>
+          <button type="button" id="btn-limpiar" class="btn-ghost">Limpiar</button>
+        </div>
+
+        <!-- Mensaje de confirmación o error (punto 5 de la evaluación) -->
+        <div id="form-status" role="alert" aria-live="polite"></div>
+      </form>
+
+      <details class="help">
+        <summary><strong>⚙️ ¿Cómo configurar EmailJS? (clic para ver)</strong></summary>
+        <ol>
+          <li>Crea tu cuenta en <a href="https://www.emailjs.com/" target="_blank" rel="noopener">emailjs.com</a>.</li>
+          <li><strong>Email Services → Add New Service</strong> (Gmail / Outlook) → copia tu <code>SERVICE ID</code>.</li>
+          <li><strong>Email Templates → Create New Template</strong> con estas variables:<br />
+            <code>{{from_name}}</code> <code>{{from_email}}</code> <code>{{to_email}}</code>
+            <code>{{subject}}</code> <code>{{message}}</code> <code>{{time}}</code><br />
+            En <strong>To Email</strong> escribe <code>{{to_email}}</code> para que llegue al destino del formulario. → copia tu <code>TEMPLATE ID</code>.</li>
+          <li><strong>Account → General → Public Key</strong> → copia tu <code>PUBLIC KEY</code>.</li>
+          <li>Pega los 3 valores en <code>js/config.js</code> → recarga y prueba. Guía completa en <code>README.md</code>.</li>
+        </ol>
+      </details>
+    </section>
+
+    <p class="back"><a href="index.html">← Volver al inicio</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>HTML5 + CSS3 + JavaScript + <a href="https://www.emailjs.com/docs/" target="_blank" rel="noopener">EmailJS</a> • Rama <strong>email</strong></p>
+  </footer>
+
+  <!-- Configuración (edita tus 3 claves aquí) -->
+  <script src="js/config.js"></script>
+  <!-- Lógica: validación + emailjs.init + emailjs.send -->
+  <script src="js/contacto.js"></script>
+</body>
+</html>
