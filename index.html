@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5</title>
+    <title>HTML5 - Proyecto Clonarproyecto + EmailJS</title>
+    <style>
+        /* ===== Estilos base (traídos del index de htmlr) + tarjeta email ===== */
+        :root {
+            --email-primary: #003b70;
+            --email-accent: #ffd700;
+            --email-success: #16a34a;
+            --email-bg: #f1f5f9;
+        }
+        body { font-family: Arial, Helvetica, sans-serif; margin: 0; }
+        .wrap { padding: 0 16px; }
+        .email-section {
+            max-width: 680px;
+            margin: 24px auto;
+            background: var(--email-bg);
+            border: 2px solid var(--email-primary);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 6px 24px rgba(0,59,112,.15);
+        }
+        .email-section h2 { color: var(--email-primary); margin: 0 0 6px; }
+        .email-section p.desc { color: #334155; margin: 0 0 16px; }
+        .badge-rama {
+            display: inline-block; background: var(--email-primary); color: var(--email-accent);
+            padding: 3px 10px; border-radius: 20px; font-size: 13px; margin-bottom: 8px;
+        }
+        .btn-email {
+            display: inline-block; background: var(--email-primary); color: #fff;
+            padding: 12px 22px; border-radius: 8px; font-weight: bold; text-decoration: none;
+        }
+        .btn-email:hover { background: #00509e; }
+        .email-vars code { background: #0f172a; color: #ffd700; padding: 1px 6px; border-radius: 4px; }
+    </style>
 </head>
 <body>
     <nav style="background:#003b70;color:white;padding:12px;">
@@ -12,8 +44,10 @@
         <a style="color:#ffd700;" href="web-bootstrap/index.html">Bootstrap</a> |
         <a style="color:#ffd700;" href="web-tailwind/index.html">Tailwind</a> |
         <a style="color:#ffd700;" href="web-permanencia/central.html">JavaScript</a> |
-        <a style="color:#ffd700;" href="web-java2/index.html">Java Fetch</a>
+        <a style="color:#ffd700;" href="web-java2/index.html">Java Fetch</a> |
+        <a style="color:#fff;background:#16a34a;padding:4px 10px;border-radius:6px;text-decoration:none;" href="email/index.html">✉️ EmailJS</a>
     </nav>
+    <div class="wrap">
     <h1>Mendfoeza</h1>
     <h2>Atuncar</h2>
     <h3>Juan</h3>
@@ -47,7 +81,23 @@
         <li><a href="web-tailwind/index.html">🌊 Tailwind - Universidad con Tailwind</a> (<a href="https://github.com/LupeSalem1401/html/blob/tailwind/index.html">ver rama tailwind en GitHub</a>)</li>
         <li><a href="web-permanencia/central.html">📜 JavaScript - central.html</a> (<a href="https://github.com/LupeSalem1401/html/blob/permanencia01/central.html">ver rama permanencia01 en GitHub</a>)</li>
         <li><a href="web-java2/index.html">☕ JavaScript 2 / Fetch - Galería</a> (<a href="https://github.com/LupeSalem1401/html/blob/java2/index.html">ver rama java2 en GitHub</a>)</li>
+        <li><a href="email/index.html">✉️ EmailJS - Página de contacto (nueva, carpeta <code>email/</code>)</a> (<a href="https://github.com/LupeSalem1401/html/tree/email">ver rama email en GitHub</a>)</li>
 </ul>
+<hr>
+
+<!-- ============================================================
+     EMAILJS ahora vive en su propia carpeta: email/
+     (index actualizado con lo del index de htmlr + enlace)
+     ============================================================ -->
+<section id="contacto-email" class="email-section" aria-labelledby="email-title">
+    <span class="badge-rama">Nuevo • Carpeta email/ • Evaluación Full Stack</span>
+    <h2 id="email-title">✉️ Enviar mensaje con EmailJS</h2>
+    <p class="desc">La página de contacto ahora tiene <strong>su propia carpeta e interfaz</strong>: validación, envío a tu correo personal o institucional y avisos de éxito o error. Haz clic para abrirla.</p>
+    <p class="email-vars">Plantilla: <code>{{from_name}}</code> <code>{{from_email}}</code> <code>{{to_email}}</code> <code>{{subject}}</code> <code>{{message}}</code> <code>{{time}}</code></p>
+    <p><a class="btn-email" href="email/index.html">Abrir página de contacto →</a></p>
+    <p class="desc">Configura tus claves en <code>email/js/config.js</code> (PUBLIC_KEY, SERVICE_ID, TEMPLATE_ID). Guía: <a href="https://www.emailjs.com/docs/" target="_blank" rel="noopener">EmailJS Docs</a>.</p>
+</section>
+
 <hr>
 <br>
 <img src="image.jpg" alt="Image" width="200">
@@ -64,9 +114,8 @@
 <div class="box">
     <h2>Título</h2>
     <p>Texto</p>
-    </p>
 </div>
 <p>Hola, mi nombre es <span class="resaltado">Juan</span> y aprendo HTML.</p>
-
+    </div>
 </body>
 </html>
