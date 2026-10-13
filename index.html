@@ -3,74 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto EmailJS | Evaluación Full Stack — Rama email</title>
+  <title>Contacto — Enviar mensaje con EmailJS</title>
   <meta name="description" content="Página de contacto funcional con HTML5, CSS3, JavaScript y EmailJS. Envía mensajes a tu correo personal o institucional con validación y confirmación." />
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- EmailJS SDK oficial: https://www.emailjs.com/docs/sdk/installation/ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="index.html">✉️ Proyecto HTML <span class="badge">rama: email</span></a>
+      <a class="brand" href="index.html">✉️ EmailJS <span class="badge">rama: email</span></a>
       <div class="nav-links">
-        <a href="index.html" class="active">Inicio</a>
-        <a href="contacto.html">Contacto EmailJS</a>
-        <a href="https://www.emailjs.com/docs/" target="_blank" rel="noopener">Docs EmailJS</a>
-        <a href="https://github.com/LupeSalem1401/html/tree/email" target="_blank" rel="noopener">Ver rama email</a>
+        <a href="index.html" class="active">Contacto EmailJS</a>
+        <a href="https://github.com/LupeSalem1401/html/tree/main" target="_blank" rel="noopener">Ver main</a>
+        <a href="https://github.com/LupeSalem1401/html/tree/email" target="_blank" rel="noopener">Rama email</a>
       </div>
     </nav>
   </header>
 
   <main class="container">
     <section class="hero">
-      <p class="kicker">Diseño Full Stack • HTML5 + CSS3 + JavaScript • Sin backend</p>
-      <h1>Envío de correos con <span class="accent">EmailJS</span></h1>
-      <p class="lead">
-        Evaluación parcial: interfaz web funcional que envía un mensaje a tu correo
-        personal o institucional usando los parámetros de tu plantilla de EmailJS,
-        con validación y mensajes de confirmación o error.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="contacto.html">Ir a la nueva página de contacto →</a>
-        <a class="btn btn-ghost" href="https://www.emailjs.com/" target="_blank" rel="noopener">Crear cuenta EmailJS</a>
-      </div>
-      <ul class="checklist">
-        <li>✔ Servicio + Plantilla + Public Key configurables en <code>js/config.js</code></li>
-        <li>✔ Parámetros de plantilla: <code>{{from_name}} {{from_email}} {{to_email}} {{subject}} {{message}} {{time}}</code></li>
-        <li>✔ Validación en vivo + aviso de éxito / error / falta de configuración</li>
+      <p class="kicker">Evaluación Parcial Full Stack • HTML5 + CSS3 + JS • Sin backend</p>
+      <h1>Contacto con <span class="accent">EmailJS</span></h1>
+      <p class="lead">Completa el formulario y tu mensaje llegará a tu correo personal o institucional mediante tu plantilla de EmailJS. Incluye validación y avisos de éxito o error.</p>
+      <ul class="chips">
+        <li><code>{{from_name}}</code></li>
+        <li><code>{{from_email}}</code></li>
+        <li><code>{{to_email}}</code></li>
+        <li><code>{{subject}}</code></li>
+        <li><code>{{message}}</code></li>
+        <li><code>{{time}}</code></li>
       </ul>
     </section>
 
-    <section class="grid-3">
-      <article class="card">
-        <h2>1. Servicio de correo</h2>
-        <p>Conecta Gmail, Outlook o cualquier SMTP desde <strong>Email Services → Add New Service</strong> y copia tu <strong>Service ID</strong>.</p>
-        <a href="https://www.emailjs.com/docs/tutorial/adding-email-service/" target="_blank" rel="noopener">Ver tutorial oficial →</a>
-      </article>
-      <article class="card">
-        <h2>2. Plantilla</h2>
-        <p>Crea tu plantilla con las variables del formulario. En <strong>To Email</strong> usa <code>{{to_email}}</code> para enviar al destino que escriba el usuario.</p>
-        <a href="https://www.emailjs.com/docs/tutorial/creating-email-template/" target="_blank" rel="noopener">Ver tutorial oficial →</a>
-      </article>
-      <article class="card">
-        <h2>3. Formulario</h2>
-        <p>La página <strong>contacto.html</strong> sigue al pie de la letra <strong>Creating a contact form</strong>: SDK por CDN, <code>emailjs.init</code> y <code>emailjs.send</code>.</p>
-        <a href="https://www.emailjs.com/docs/tutorial/creating-contact-form/" target="_blank" rel="noopener">Ver tutorial oficial →</a>
-      </article>
+    <section class="card form-card" aria-labelledby="titulo-contacto">
+      <span class="badge">Rama: email • Nueva página</span>
+      <h2 id="titulo-contacto">✉️ Enviar mensaje de confirmación</h2>
+      <p class="muted">Los <code>name</code> del formulario coinciden con las variables de tu plantilla EmailJS.</p>
+
+      <form id="contact-form" novalidate>
+        <input type="hidden" name="time" id="time" value="" />
+
+        <div class="field" id="g-nombre">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="from_name" placeholder="Ej: Juan Esteban Tasayco" maxlength="80" autocomplete="name" required />
+          <small class="error-msg" id="err-nombre"></small>
+        </div>
+
+        <div class="form-row">
+          <div class="field" id="g-origen">
+            <label for="origen">Tu correo (remitente) *</label>
+            <input type="email" id="origen" name="from_email" placeholder="Ej: juan@ejemplo.com" maxlength="100" autocomplete="email" required />
+            <small class="error-msg" id="err-origen"></small>
+          </div>
+          <div class="field" id="g-destino">
+            <label for="destino">Correo destino (personal / institucional) *</label>
+            <input type="email" id="destino" name="to_email" placeholder="Ej: juan@universidad.edu.pe" maxlength="100" autocomplete="email" required />
+            <small class="error-msg" id="err-destino"></small>
+          </div>
+        </div>
+
+        <div class="field" id="g-asunto">
+          <label for="asunto">Asunto *</label>
+          <input type="text" id="asunto" name="subject" placeholder="Ej: Confirmación de evaluación parcial" maxlength="120" required />
+          <small class="error-msg" id="err-asunto"></small>
+        </div>
+
+        <div class="field" id="g-mensaje">
+          <label for="mensaje">Mensaje * <span class="hint">(mín. 10 caracteres)</span></label>
+          <textarea id="mensaje" name="message" rows="5" maxlength="2000" placeholder="Escribe tu mensaje de confirmación o notificación..." required></textarea>
+          <small class="error-msg" id="err-mensaje"></small>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="btn-enviar">Enviar mensaje</button>
+          <button type="button" id="btn-limpiar" class="btn-ghost">Limpiar</button>
+        </div>
+
+        <div id="form-status" role="alert" aria-live="polite"></div>
+      </form>
+
+      <details class="help">
+        <summary><strong>⚙️ ¿Cómo configurar EmailJS? (clic para ver)</strong></summary>
+        <ol>
+          <li>Crea tu cuenta en <a href="https://www.emailjs.com/" target="_blank" rel="noopener">emailjs.com</a>.</li>
+          <li><strong>Email Services → Add New Service</strong> (Gmail / Outlook) → copia tu <code>SERVICE ID</code>. <a href="https://www.emailjs.com/docs/tutorial/adding-email-service/" target="_blank" rel="noopener">Tutorial →</a></li>
+          <li><strong>Email Templates → Create New Template</strong> con <code>{{from_name}} {{from_email}} {{to_email}} {{subject}} {{message}} {{time}}</code>. En <strong>To Email</strong> escribe <code>{{to_email}}</code>. → copia tu <code>TEMPLATE ID</code>. <a href="https://www.emailjs.com/docs/tutorial/creating-email-template/" target="_blank" rel="noopener">Tutorial →</a></li>
+          <li><strong>Account → General → Public Key</strong> → copia tu <code>PUBLIC KEY</code>.</li>
+          <li>Pega los 3 valores en <code>js/config.js</code>, recarga y prueba. Tutorial del formulario: <a href="https://www.emailjs.com/docs/tutorial/creating-contact-form/" target="_blank" rel="noopener">Creating a contact form →</a></li>
+        </ol>
+      </details>
     </section>
 
-    <section class="card howto">
-      <h2>¿Cómo probar en 2 minutos?</h2>
-      <ol>
-        <li>Abre <a href="contacto.html"><strong>contacto.html</strong></a>.</li>
-        <li>Edita <code>js/config.js</code> con tu <code>PUBLIC_KEY</code>, <code>SERVICE_ID</code> y <code>TEMPLATE_ID</code> (ver <code>README.md</code>).</li>
-        <li>Completa el formulario y presiona <strong>Enviar mensaje</strong>. Verás <em>Enviando…</em>, luego <em>✅ éxito</em> o <em>❌ error</em>.</li>
-      </ol>
-    </section>
+    <p class="back"><a href="https://github.com/LupeSalem1401/html/tree/main">Ver proyecto completo en rama main →</a></p>
   </main>
 
   <footer class="site-footer">
-    <p>Rama <strong>email</strong> del repo <a href="https://github.com/LupeSalem1401/html" target="_blank" rel="noopener">LupeSalem1401/html</a> • HTML5 + CSS3 + JS + EmailJS • <span id="year"></span></p>
+    <p>HTML5 + CSS3 + JavaScript + <a href="https://www.emailjs.com/docs/" target="_blank" rel="noopener">EmailJS</a> • Repo <a href="https://github.com/LupeSalem1401/html" target="_blank" rel="noopener">LupeSalem1401/html</a> • Rama <strong>email</strong></p>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script src="js/config.js"></script>
+  <script src="js/contacto.js"></script>
 </body>
 </html>
